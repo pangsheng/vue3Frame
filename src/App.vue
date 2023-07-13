@@ -1,6 +1,23 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import router from './router/index';
+import { useRoute,useRouter } from 'vue-router'
+import DynamiStateUrl from'./utils/index.ts'
+import * as mmm from '../public/test.json'
+
+let temp=mmm.default;
+
+for(let i = 0 ; i < temp.length;i++){
+  router.addRoute({
+      path: `/${temp[i].title}`,
+      name: temp[i].title,
+      component: () => import(`${DynamiStateUrl(temp[i].url)}`)
+    })
+    console.log(DynamiStateUrl(temp[i].url));
+}
+
+
 </script>
 
 <template>
@@ -12,7 +29,8 @@ import HelloWorld from './components/HelloWorld.vue'
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/AboutView">About</RouterLink>
+        <RouterLink to="/testVue">Test</RouterLink>
       </nav>
     </div>
   </header>

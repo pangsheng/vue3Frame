@@ -1,0 +1,20 @@
+[
+  {
+    "id": 4,
+    "url": "views/testVue",
+    "title": "testVue",
+    "type": 0,
+    "priority": 0,
+    "icon": "icon-team",
+    "parentId": 1
+  },
+  {
+    "id": 5,
+    "url": "views/AboutView",
+    "title": "AboutView",
+    "type": 0,
+    "priority": 0,
+    "icon": "icon-addusergroup",
+    "parentId": 1
+  }
+]
